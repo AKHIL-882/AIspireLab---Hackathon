@@ -66,7 +66,7 @@ const Hero = () => {
         className="relative z-10 w-full max-w-4xl mt-12 md:mt-0"
       >
         <iframe
-          className="w-full h-48 sm:h-64 md:h-80 lg:h-[540px] rounded-lg shadow-lg"
+          className="w-full h-48 sm:h-64 md:h-80 lg:h-[540px] rounded-lg shadow-lg mt-6"
           src="SARA-YC.mp4"
           title="SARA-YC Demo"
           frameBorder="0"
