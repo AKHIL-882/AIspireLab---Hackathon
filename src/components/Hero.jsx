@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <div
-      className="relative flex flex-col items-center justify-center w-full px-4 bg-cover bg-center bg-no-repeat"
+      className="relative flex flex-col md:flex-row items-center justify-between w-full px-4 bg-cover bg-center bg-no-repeat h-screen"
       style={{ backgroundImage: "url('/download.png')" }}
     >
       <motion.div
@@ -14,7 +14,8 @@ const Hero = () => {
         transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
       ></motion.div>
 
-      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-3xl py-10 mt-40">
+      {/* Left Section - Text Content */}
+      <div className="relative z-10 flex flex-col items-start text-left w-full max-w-lg py-10 ml-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,10 +30,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-5 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl"
+          className="mt-5 text-base text-gray-500 sm:text-lg md:text-xl"
         >
-          Revolutionize customer engagement with our advanced AI chatbot
-          platform. Deliver personalized experiences that drive results.
+          Revolutionize customer engagement with our advanced AI chatbot platform.
+          Deliver personalized experiences that drive results.
         </motion.p>
 
         {/* Buttons */}
@@ -57,14 +58,15 @@ const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Right Section - Video */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="relative z-10 mt-10 w-full max-w-7xl"
+        className="relative z-10 w-full max-w-4xl pr-10"
       >
         <iframe
-          className="w-full h-100 sm:h-96 md:h-[540px] rounded-lg shadow-lg"
+          className="w-full h-64 sm:h-96 md:h-[540px] rounded-lg shadow-lg"
           src="SARA-YC.mp4"
           title="SARA-YC Demo"
           frameBorder="0"

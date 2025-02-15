@@ -6,100 +6,70 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '49',
-      features: [
-        'Up to 1,000 conversations/month',
-        'Basic AI capabilities',
-        'Email support',
-        '5 AI templates',
-        'Basic analytics',
-      ],
+      price: '$12,500',
+      features: ['2 users', '15 events', '60 min length'],
       highlighted: false,
+      size: 'h-72',
     },
     {
-      name: 'Professional',
-      price: '99',
-      features: [
-        'Up to 10,000 conversations/month',
-        'Advanced AI capabilities',
-        'Priority support',
-        '20 AI templates',
-        'Advanced analytics',
-        'Custom integrations',
-      ],
+      name: 'Pro',
+      price: "Let's talk",
+      features: ['8 users', 'Unlimited events', 'Unlimited length'],
       highlighted: true,
+      size: 'h-80',
     },
     {
       name: 'Enterprise',
-      price: '199',
-      features: [
-        'Unlimited conversations',
-        'Full AI capabilities',
-        '24/7 dedicated support',
-        'Unlimited AI templates',
-        'Custom analytics',
-        'API access',
-        'Custom development',
-      ],
+      price: "Let's talk",
+      features: ['Custom number of users', 'Unlimited events', 'Unlimited length'],
       highlighted: false,
+      size: 'h-96',
     },
   ];
 
   return (
-    <section className="py-20" id="pricing">
+    <section className="py-20 flex justify-center items-center bg-white-900" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <div className="text-center mb-2">
+         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-4"
         >
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Simple, Transparent Pricing
+          Simple, Transparent Pricing
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Choose the perfect plan for your business
+          Choose the perfect plan for your business
           </p>
         </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <motion.div
+        <div className="flex justify-center items-end space-x-8">
+          {plans.map((plan) => (
+            <div
               key={plan.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative rounded-2xl p-8 ${
-                plan.highlighted
-                  ? 'bg-gradient-to-b from-blue-600 to-indigo-600 text-white'
-                  : 'bg-white text-gray-900'
-              } shadow-lg`}
+              className={`relative w-64 ${plan.size} rounded-t-full p-8 bg-gradient-to-b from-blue-400 to-indigo-700 text-white shadow-lg`}
             >
-              <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-              <div className="mb-8">
-                <span className="text-4xl font-bold">${plan.price}</span>
-                {plan.price !== 'Custom' && <span className="text-lg">/month</span>}
+              <h3 className="text-xl font-bold text-center">{plan.name}</h3>
+              <div className="text-center text-3xl font-semibold my-6">{plan.price}</div>
+              <div className="mt-6 flex justify-center">
+                <button className="py-2 px-6 rounded-full bg-white text-indigo-700 font-semibold hover:bg-gray-200 transition mb-2">
+                  Book a demo
+                </button>
               </div>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center">
-                    <CheckIcon className="h-5 w-5 mr-2 text-green-400" />
+                  <li key={feature} className="flex items-center justify-center">
+                    <CheckIcon className="h-5 w-5 mr-2 text-green-300" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <button
-                className={`w-full py-3 px-6 rounded-full font-semibold transition-colors ${
-                  plan.highlighted
-                    ? 'bg-white text-blue-600 hover:bg-gray-100'
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                Get Started
-              </button>
-            </motion.div>
+
+            </div>
           ))}
         </div>
       </div>
