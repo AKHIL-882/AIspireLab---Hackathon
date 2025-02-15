@@ -9,21 +9,21 @@ const Pricing = () => {
       price: '$12,500',
       features: ['2 users', '15 events', '60 min length'],
       highlighted: false,
-      size: 'h-72',
-    },
+      size: 'h-80', // Change from h-72 to h-80
+    },    
     {
       name: 'Pro',
       price: "Let's talk",
       features: ['8 users', 'Unlimited events', 'Unlimited length'],
       highlighted: true,
-      size: 'h-80',
+      size: 'h-96',
     },
     {
       name: 'Enterprise',
       price: "Let's talk",
       features: ['Custom number of users', 'Unlimited events', 'Unlimited length'],
       highlighted: false,
-      size: 'h-96',
+      size: 'h-[28rem]',
     },
   ];
 
@@ -56,7 +56,7 @@ const Pricing = () => {
               <h3 className="text-xl font-bold text-center">{plan.name}</h3>
               <div className="text-center text-3xl font-semibold my-6">{plan.price}</div>
               <div className="mt-6 flex justify-center">
-                <button className="py-2 px-6 rounded-full bg-white text-indigo-700 font-semibold hover:bg-gray-200 transition mb-2">
+                <button className="py-2 px-6 rounded-full bg-white text-indigo-700 font-semibold hover:bg-gray-200 transition mb-4">
                   Book a demo
                 </button>
               </div>
