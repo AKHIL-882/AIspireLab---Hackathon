@@ -9,7 +9,7 @@ const Pricing = () => {
       price: '$12,500',
       features: ['2 users', '15 events', '60 min length'],
       highlighted: false,
-      size: 'h-80', // Change from h-72 to h-80
+      size: 'h-80',
     },    
     {
       name: 'Pro',
@@ -47,11 +47,11 @@ const Pricing = () => {
         </motion.div>
         </div>
 
-        <div className="flex justify-center items-end space-x-8">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-end space-y-8 md:space-y-0 md:space-x-8">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative w-64 ${plan.size} rounded-t-full p-8 bg-gradient-to-b from-blue-400 to-indigo-700 text-white shadow-lg`}
+              className={`relative w-full md:w-64 ${plan.size} rounded-t-full p-8 bg-gradient-to-b from-blue-400 to-indigo-700 text-white shadow-lg`}
             >
               <h3 className="text-xl font-bold text-center">{plan.name}</h3>
               <div className="text-center text-3xl font-semibold my-6">{plan.price}</div>
