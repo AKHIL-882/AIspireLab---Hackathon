@@ -3,23 +3,17 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-full px-4 bg-gradient-to-b from-blue-50 to-white">
-{/* 
+    <div
+      className="relative flex flex-col items-center justify-center w-full px-4 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/download.png')" }}
+    >
       <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('download.png')" }}
-        initial={{ opacity: 0.4 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 5, repeat: Infinity, repeatType: "mirror" }}
-      />
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-20 blur-3xl"
-        initial={{ opacity: 0, scale: 1.5 }}
-        animate={{ opacity: 0.3, scale: 1 }}
-        transition={{ duration: 3, repeat: Infinity, repeatType: "mirror" }}
-      /> */}
+        className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white opacity-80"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.6, 0.8, 0.6] }}
+        transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
+      ></motion.div>
 
-      {/* Hero Content - Centered */}
       <div className="relative z-10 flex flex-col items-center text-center w-full max-w-3xl py-10 mt-40">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +57,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Video - Placed Below */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -71,7 +64,7 @@ const Hero = () => {
         className="relative z-10 mt-10 w-full max-w-7xl"
       >
         <iframe
-           className="w-full h-100 sm:h-96 md:h-[540px] rounded-lg shadow-lg"
+          className="w-full h-100 sm:h-96 md:h-[540px] rounded-lg shadow-lg"
           src="SARA-YC.mp4"
           title="SARA-YC Demo"
           frameBorder="0"
